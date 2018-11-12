@@ -1,8 +1,8 @@
 import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
+import { Router } from 'react-router-dom'
 
-import { Route } from 'react-router-dom'
 class BooksApp extends React.Component {
   state = {
     /**
@@ -15,11 +15,6 @@ class BooksApp extends React.Component {
   }
 
   render() {
-    return (
-      <p></p>
-    );
-
-
     return (
       <div className="app">
         {this.state.showSearchPage ? (
