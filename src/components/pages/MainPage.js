@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as BooksAPI from '../../BooksAPI';
+
 import Book from '../Book';
 import Shelf from '../Shelf';
 
@@ -22,6 +23,16 @@ class MainPage extends React.Component {
       });
     }
 
+    updateBook = (book, shelf) => {
+        BooksAPI.update(book, shelf)
+        .then(resp => {
+          book.shelf = shelf;
+          this.setState(state => ({
+            books: state.books.filter(b => b.id !== book.id).concat([book])
+          }));
+        });
+      }
+      
   render() {
     return (
       <div className="list-books">
