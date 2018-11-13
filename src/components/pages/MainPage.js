@@ -1,14 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as BooksAPI from '../../BooksAPI';
-
+import Book from '../Book';
 import Shelf from '../Shelf';
 
 class MainPage extends React.Component {
+  constructor(props) {
+//call super(props) for subclass books first.
+//Source: https://reactjs.org/docs/react-component.html#constructor
+  super(props);
+  this.state = {
+    books: []
+  }
+}
+//source: https://reactjs.org/docs/react-component.html#componentdidmount
   componentDidMount() {
       BooksAPI.getAll()
       .then(resp => {
         console.log(resp);
+            this.setState({ books: resp });
       });
     }
 
@@ -20,9 +30,11 @@ class MainPage extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-          <Shelf />
-          <Shelf />
-          <Shelf />
+          <div>
+            <Shelf updateBook={this.updateBook} name="Currently Reading" books={this.state.books.filter(b => b.shelf === "currentlyReading")} />
+            <Shelf updateBook={this.updateBook} name="Want To Read" books={this.state.books.filter(b => b.shelf === "wantToRead")} />
+            <Shelf updateBook={this.updateBook} name="Read" books={this.state.books.filter(b => b.shelf === "read")} />
+          </div>
           </div>
         </div>
         <div className="open-search">
