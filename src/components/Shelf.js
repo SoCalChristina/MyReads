@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as BooksAPI from '../BooksAPI';
-// import Book throws an error
+
 import Book from './Book';
 
 class Shelf extends React.Component {
+  //invoke to use dependencies
   componentDidMount() {
   }
   render() {

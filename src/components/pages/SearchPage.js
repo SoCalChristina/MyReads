@@ -17,9 +17,9 @@ class SearchPage extends React.Component {
   }
 
   componentDidMount() {
+    {/* utilize the API to get all the books */}
     BooksAPI.getAll()
       .then(resp => {
-      console.log(resp);
       this.setState({ books: resp });
     });
   }
@@ -32,7 +32,8 @@ class SearchPage extends React.Component {
     if(this.state.query === '' || this.state.query === undefined) {
       return this.setState({ results: [] });
   }
-    BooksAPI.search(this.state.query.trim()).then(res => {
+  // credit to @AmadaH for helping me fix a bug related to trim()
+    BooksAPI.search(this.state.query).then(res => {
     if(res.error) {
       return this.setState({ results: [] });
     }
@@ -41,11 +42,11 @@ class SearchPage extends React.Component {
         {/* using f as find and B Book search is equal to b Book response */}
         let f = this.state.books.filter(B => B.id === b.id);
         if(f[0]) { b.shelf = f[0].shelf;}
-        });
+      });
         return this.setState({ results: res });
-      }
-    });
-  }
+    }
+  });
+}
 
   updateBook = (book, shelf) => {
     BooksAPI.update(book, shelf)
@@ -63,8 +64,8 @@ class SearchPage extends React.Component {
         <div className="search-books-bar">
         <Link className="close-search" to="/">Close</Link>
         <div className="search-books-input-wrapper">
-        {/* onChange used to see changes as user types */}
-        <input type="text" placeholder="Search by title or author" value={this.state.query}
+          {/* onChange used to see changes as user types */}
+          <input type="text" placeholder="Search by title or author" value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value)} />
         </div>
       </div>
