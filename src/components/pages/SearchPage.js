@@ -17,13 +17,12 @@ class SearchPage extends React.Component {
   }
 
   componentDidMount() {
-  BooksAPI.getAll()
-  .then(resp => {
-    console.log(resp);
-    this.setState({ books: resp });
-  });
+    BooksAPI.getAll()
+      .then(resp => {
+      console.log(resp);
+      this.setState({ books: resp });
+    });
   }
-
 
   updateQuery = (query) => {
     this.setState({query: query}, this.submitSearch);
@@ -32,13 +31,17 @@ class SearchPage extends React.Component {
   submitSearch() {
     if(this.state.query === '' || this.state.query === undefined) {
       return this.setState({ results: [] });
-    }
+  }
     BooksAPI.search(this.state.query.trim()).then(res => {
-      console.log(res);
-      if(res.error) {
-        return this.setState({ results: [] });
-      }
-      else {
+    if(res.error) {
+      return this.setState({ results: [] });
+    }
+    else {
+      res.forEach(b => {
+        {/* using f as find and B Book search is equal to b Book response */}
+        let f = this.state.books.filter(B => B.id === b.id);
+        if(f[0]) { b.shelf = f[0].shelf;}
+        });
         return this.setState({ results: res });
       }
     });
@@ -53,24 +56,26 @@ class SearchPage extends React.Component {
       }));
     });
   }
+
   render() {
     return (
       <div className="search-books">
         <div className="search-books-bar">
-          <Link className="close-search" to="/">Close</Link>
-          <div className="search-books-input-wrapper">
-          <input type="text" placeholder="Search by title or author" value={this.state.query}
-              onChange={(event) => this.updateQuery(event.target.value)} />
-          </div>
+        <Link className="close-search" to="/">Close</Link>
+        <div className="search-books-input-wrapper">
+        {/* onChange used to see changes as user types */}
+        <input type="text" placeholder="Search by title or author" value={this.state.query}
+            onChange={(event) => this.updateQuery(event.target.value)} />
         </div>
-        <div className="search-books-results">
-          <ol className="books-grid">
+      </div>
+      <div className="search-books-results">
+        <ol className="books-grid">
           {
             this.state.results.map((book, key) => <Book updateBook={this.updateBook} book={book} key={key} />)
           }
-          </ol>
-        </div>
+        </ol>
       </div>
+    </div>
     );
   }
 }
