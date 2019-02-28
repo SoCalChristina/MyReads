@@ -8,12 +8,12 @@
 Myreads is a react app created for the Grow With Google Udacity Frontend Nano Degree. I added interactivity to the starter code provided by Udacity.
 
 
-#Instructions
+# Instructions
 
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
-##Components
+## Components
 
 This app contains four components: MainPage, SearchPage, Books, and Shelf.
 The Mainpage.js controls the initial home page.
@@ -35,10 +35,10 @@ Shelf.js controls the capabilities of the user to designate books into four clas
 
   React router
 
-##Backend Server
+## Backend Server
 The starter code contains the following API:  [`BooksAPI.js`](src/BooksAPI.js)
 
-##Acknowledgements
+## Acknowledgements
 
 This project is more difficult for me as I live in Ventura County California and our community is facing catastrophic wildfires. We are living with school closures, loved ones under mandatory evacuation and have intermittent disruption in internet service. Never the less, I am determined to complete as much of the degree as possible. That being said, I'm going to take this space to acknowledge the firefighters working night and day to protect our homes and our community.
 
@@ -53,7 +53,7 @@ I used the following tutorials:
 
 I consulted my peers when needed.
 
-##Resources
+## Resources
 
 React documentation
 (https://reactjs.org/)
@@ -66,10 +66,10 @@ React documentation
 
 The starter code is located here: (https://github.com/udacity/reactnd-project-myreads-starter)
 
-##Contributing
+## Contributing
 
 This repository is for the Udacity Nano degree project submission. Therefore, I will not accept pull requests.
 
-##Contact
+## Contact
 
 Connect with me on LinkedIn (https://www.linkedin.com/in/christina-tovar-hamernik/) or Twitter (@CTovarHamernik)
