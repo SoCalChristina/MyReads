@@ -2,7 +2,8 @@
 ## Udacity Frontend Developer Course
 ### Project 6
 ----
-[!MyReads App](myreads-screenshot.png)
+![MyReads App](myreads-screenshot.png)   
+
 ## Project Overview:
 
 Myreads is a react app created for the Grow With Google Udacity Frontend Nano Degree. I added interactivity to the starter code provided by Udacity.
@@ -35,8 +36,6 @@ Shelf.js controls the capabilities of the user to designate books into four clas
 
   React router
 
-## Backend Server
-The starter code contains the following API:  [`BooksAPI.js`](src/BooksAPI.js)
 
 ## Acknowledgements
 
@@ -61,6 +60,8 @@ React documentation
 (https://www.npmjs.com/package/react-router)
 
 (https://reacttraining.com/react-router/)
+
+[`BooksAPI.js`](src/BooksAPI.js)
 
 The starter code is located here: (https://github.com/udacity/reactnd-project-myreads-starter)
 
