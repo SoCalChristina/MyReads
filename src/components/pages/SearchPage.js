@@ -12,12 +12,11 @@ class SearchPage extends React.Component {
     this.state = {
       books: [],
       results: [],
-      query: ""
+      query: []//""
     }
   }
-
+  // utilize the API to get all the books //
   componentDidMount() {
-    {/* utilize the API to get all the books */}
     BooksAPI.getAll()
       .then(resp => {
       this.setState({ books: resp });
@@ -32,14 +31,13 @@ class SearchPage extends React.Component {
     if(this.state.query === '' || this.state.query === undefined) {
       return this.setState({ results: [] });
   }
-  // credit to @AmadaH for helping me fix a bug related to trim()
-    BooksAPI.search(this.state.query).then(res => {
+      BooksAPI.search(this.state.query).then(res => {
     if(res.error) {
       return this.setState({ results: [] });
     }
     else {
       res.forEach(b => {
-        {/* using f as find and B Book search is equal to b Book response */}
+        // using f as find and B Book search is equal to b Book response //
         let f = this.state.books.filter(B => B.id === b.id);
         if(f[0]) { b.shelf = f[0].shelf;}
       });

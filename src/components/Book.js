@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import * as BooksAPI from '../BooksAPI';
 
 class Book extends React.Component {
   render() {
@@ -9,7 +6,7 @@ class Book extends React.Component {
         <li>
         <div className="book">
           <div className="book-top">
-            {/* use props with imageLinks and thumbnails to render book covers */}
+            {/*use props with imageLinks and thumbnails to render book covers*/}
             <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail || ""}")` }}></div>
             <div className="book-shelf-changer">
               {/* assign shelf property to select */}
@@ -30,6 +27,4 @@ class Book extends React.Component {
     );
   }
 }
-
-
 export default Book;

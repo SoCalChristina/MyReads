@@ -2,7 +2,7 @@
 ## Udacity Frontend Developer Course
 ### Project 6
 ----
-
+[!MyReads App](myreads-screenshot.png)
 ## Project Overview:
 
 Myreads is a react app created for the Grow With Google Udacity Frontend Nano Degree. I added interactivity to the starter code provided by Udacity.
@@ -27,7 +27,7 @@ Shelf.js controls the capabilities of the user to designate books into four clas
 
 ## Dependencies
 
-  The following dependencies are used in builiding of this app:
+  The following dependencies are used in building of this app:
 
   Node js
 
@@ -39,8 +39,6 @@ Shelf.js controls the capabilities of the user to designate books into four clas
 The starter code contains the following API:  [`BooksAPI.js`](src/BooksAPI.js)
 
 ## Acknowledgements
-
-This project is more difficult for me as I live in Ventura County California and our community is facing catastrophic wildfires. We are living with school closures, loved ones under mandatory evacuation and have intermittent disruption in internet service. Never the less, I am determined to complete as much of the degree as possible. That being said, I'm going to take this space to acknowledge the firefighters working night and day to protect our homes and our community.
 
 I used the following tutorials:
 (https://www.youtube.com/watch?v=acJHkd6K5kI&=&feature=youtu.be)
